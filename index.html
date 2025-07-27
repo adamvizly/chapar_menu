@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shiraz Garden - Persian Cuisine</title>
+    
+    <!-- Tailwind CSS for styling -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&family=Lalezar&family=Vazirmatn:wght@400;500;700&display=swap" rel="stylesheet">
+    
+    <style>
+        /* Custom styles */
+        body {
+            font-family: 'Inter', sans-serif;
+            /* Default background with doodle pattern and a light gray base */
+            background-color: #E5E7EB; /* gray-200 */
+            background-image: linear-gradient(rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.9)), url('doodle-menu-bg.png');
+            background-size: auto;
+            background-repeat: repeat;
+            background-position: center;
+            background-attachment: fixed;
+            transition: all 0.3s ease-in-out;
+        }
+        
+        /* Styles for Right-to-Left (Persian) */
+        html[dir="rtl"] body {
+            font-family: 'Vazirmatn', sans-serif;
+        }
+        html[dir="rtl"] .logo-font {
+             font-family: 'Lalezar', cursive;
+        }
+        html[dir="rtl"] .menu-item > div {
+            text-align: right;
+        }
+        
+        .logo-font {
+            font-family: 'Lalezar', cursive;
+        }
+        .menu-item-description {
+            color: #4b5563; /* gray-600 for good contrast on light background */
+        }
+        .price {
+            color: #ca8a04; /* A rich, darker gold for better contrast */
+        }
+        .menu-item {
+            border-bottom: 1px solid #d1d5db; /* Lighter gray border */
+            padding-bottom: 1.5rem;
+            margin-bottom: 1.5rem;
+        }
+        .menu-item:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+        }
+    </style>
+</head>
+<body class="text-gray-800">
+
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8 py-12">
+
+        <!-- Header Section with Logo and Controls -->
+        <header class="text-center mb-12 relative">
+            <h1 class="logo-font text-5xl md:text-7xl text-gray-900 drop-shadow-lg tracking-wider" data-key="title">Chapar Coffee</h1>
+            <p class="text-lg text-gray-600 mt-2" data-key="subtitle">best brewed coffees on the weel</p>
+            
+            <!-- Control Buttons -->
+            <div class="absolute top-0 right-0 flex flex-col sm:flex-row gap-2">
+                <button id="lang-toggle" data-key="toggle_lang" class="bg-amber-500 text-white font-bold py-2 px-4 rounded-lg hover:bg-amber-600 transition-colors text-sm">فارسی</button>
+            </div>
+        </header>
+
+        <!-- Main Menu Grid -->
+        <main class="grid grid-cols-1 lg:grid-cols-3 gap-x-12 gap-y-10">
+
+            <!-- Left Menu Column -->
+            <div class="lg:col-span-1">
+                <h2 class="text-3xl font-bold border-b-2 border-amber-500 pb-2 mb-6 inline-block" data-key="espresso">Espresso / Americano</h2>
+                
+                <div class="menu-item flex items-start gap-4">
+                    <!-- <img src="https://placehold.co/100x100/eab308/3f3f46?text=Kebab" alt="Chelow Kebab Koobideh" class="w-20 h-20 rounded-full object-cover border-2 border-gray-400 flex-shrink-0"> -->
+                    <div>
+                        <div class="flex justify-between items-baseline">
+                            <h3 class="text-xl font-bold" data-key="robusta">Oganda (Robusta)</h3>
+                            <p class="text-xl font-bold price">70</p>
+                        </div>
+                        <!-- <p class="menu-item-description text-sm mt-1" data-key="kebab_desc">Two skewers of seasoned ground beef, grilled to perfection. Served with saffron basmati rice.</p> -->
+                    </div>
+                </div>
+
+                <div class="menu-item flex items-start gap-4">
+                    <!-- <img src="https://placehold.co/100x100/eab308/3f3f46?text=Sabzi" alt="Ghormeh Sabzi" class="w-20 h-20 rounded-full object-cover border-2 border-gray-400 flex-shrink-0"> -->
+                    <div>
+                        <div class="flex justify-between items-baseline">
+                            <h3 class="text-xl font-bold" data-key="arabica">Colombia (Arabica)</h3>
+                            <p class="text-xl font-bold price">100</p>
+                        </div>
+                        <!-- <p class="menu-item-description text-sm mt-1" data-key="sabzi_desc">A fragrant herb stew with tender beef, kidney beans, and dried lime. Served with rice.</p> -->
+                    </div>
+                </div>
+            </div>
+
+            <!-- Center Column -->
+            <div class="lg:col-span-1">
+                <h2 class="text-3xl font-bold border-b-2 border-amber-500 pb-2 mb-6 inline-block" data-key="special">Specialty Brewed</h2>
+                
+                <div class="menu-item flex items-start gap-4">
+                    <!-- <img src="https://placehold.co/100x100/eab308/3f3f46?text=Kebab" alt="Chelow Kebab Koobideh" class="w-20 h-20 rounded-full object-cover border-2 border-gray-400 flex-shrink-0"> -->
+                    <div>
+                        <div class="flex justify-between items-baseline">
+                            <h3 class="text-xl font-bold" data-key="guatemala">Guatemala</h3>
+                            <p class="text-xl font-bold price">160</p>
+                        </div>
+                        <!-- <p class="menu-item-description text-sm mt-1" data-key="kebab_desc">Two skewers of seasoned ground beef, grilled to perfection. Served with saffron basmati rice.</p> -->
+                    </div>
+                </div>
+
+                <div class="menu-item flex items-start gap-4">
+                    <!-- <img src="https://placehold.co/100x100/eab308/3f3f46?text=Sabzi" alt="Ghormeh Sabzi" class="w-20 h-20 rounded-full object-cover border-2 border-gray-400 flex-shrink-0"> -->
+                    <div>
+                        <div class="flex justify-between items-baseline">
+                            <h3 class="text-xl font-bold" data-key="colombia">Colombia</h3>
+                            <p class="text-xl font-bold price">180</p>
+                        </div>
+                        <!-- <p class="menu-item-description text-sm mt-1" data-key="sabzi_desc">A fragrant herb stew with tender beef, kidney beans, and dried lime. Served with rice.</p> -->
+                    </div>
+                </div>
+
+                <div class="menu-item flex items-start gap-4">
+                    <!-- <img src="https://placehold.co/100x100/eab308/3f3f46?text=Sabzi" alt="Ghormeh Sabzi" class="w-20 h-20 rounded-full object-cover border-2 border-gray-400 flex-shrink-0"> -->
+                    <div>
+                        <div class="flex justify-between items-baseline">
+                            <h3 class="text-xl font-bold" data-key="elsalvador">El Salvador</h3>
+                            <p class="text-xl font-bold price">190</p>
+                        </div>
+                        <!-- <p class="menu-item-description text-sm mt-1" data-key="sabzi_desc">A fragrant herb stew with tender beef, kidney beans, and dried lime. Served with rice.</p> -->
+                    </div>
+                </div>
+            </div>
+
+            <!-- Right Menu Column -->
+            <div class="lg:col-span-1">
+                <h2 class="text-3xl font-bold border-b-2 border-amber-500 pb-2 mb-6 inline-block" data-key="ice">Ice</h2>
+                
+                <div class="menu-item flex items-start gap-4">
+                    <!-- <img src="https://placehold.co/100x100/eab308/3f3f46?text=Kebab" alt="Chelow Kebab Koobideh" class="w-20 h-20 rounded-full object-cover border-2 border-gray-400 flex-shrink-0"> -->
+                    <div>
+                        <div class="flex justify-between items-baseline">
+                            <h3 class="text-xl font-bold" data-key="iceamericano">Ice Americano</h3>
+                            <p class="text-xl font-bold price">100/120</p>
+                        </div>
+                        <!-- <p class="menu-item-description text-sm mt-1" data-key="kebab_desc">Two skewers of seasoned ground beef, grilled to perfection. Served with saffron basmati rice.</p> -->
+                    </div>
+                </div>
+
+                <div class="menu-item flex items-start gap-4">
+                    <!-- <img src="https://placehold.co/100x100/eab308/3f3f46?text=Sabzi" alt="Ghormeh Sabzi" class="w-20 h-20 rounded-full object-cover border-2 border-gray-400 flex-shrink-0"> -->
+                    <div>
+                        <div class="flex justify-between items-baseline">
+                            <h3 class="text-xl font-bold" data-key="latte">Ice Latte</h3>
+                            <p class="text-xl font-bold price">120/140</p>
+                        </div>
+                        <!-- <p class="menu-item-description text-sm mt-1" data-key="sabzi_desc">A fragrant herb stew with tender beef, kidney beans, and dried lime. Served with rice.</p> -->
+                    </div>
+                </div>
+            </div>
+        </main>
+        
+        <!-- Footer -->
+        <footer class="text-center mt-16 text-gray-500 text-sm">
+            <p data-key="footer">Chapar Coffee | Tabriz </p>
+        </footer>
+    </div>
+
+    <script>
+        // --- Translations Object ---
+        const translations = {
+            en: {
+                title: "Chapar Coffee",
+                subtitle: "best brewed coffees on the weel",
+                espresso: "Espresso / Americano",
+                robusta: "Oganda (Robusta)",
+                arabica: "Colombia (Arabica)",
+                special: "Specialty Brewed",
+                guatemala: "Guatemala",
+                colombia: "Colombia",
+                elsalvador: "El Salvador",
+                ice: "Ice",
+                iceamericano: "Ice Americano",
+                latte: "Ice Latte",
+                footer: "Chapar Coffee | Tabriz",
+                toggle_lang: "فارسی"
+            },
+            fa: {
+                title: "کافه چاپار",
+                subtitle: "بهترین قهوه های دمی در جهان",
+                espresso: "اسپرسو / آمریکانو",
+                robusta: "اوگاندا (ربوستا)",
+                arabica: "کلمبیا (عربیکا)",
+                special: "دمی اسپشیال",
+                guatemala: "گواتمالا",
+                colombia: "کلمبیا",
+                elsalvador: "ال سالوادور",
+                ice: "قهوه سرد",
+                iceamericano: "آیس آمریکانو",
+                latte: "آیس لاته",
+                footer: "کافه چاپار | تبریز",
+                toggle_lang: "English"
+            }
+        };
+
+        // --- Element Selectors ---
+        const langToggleButton = document.getElementById('lang-toggle');
+        let currentLang = 'en';
+
+        // --- Event Listeners ---
+        langToggleButton.addEventListener('click', () => {
+            currentLang = currentLang === 'en' ? 'fa' : 'en';
+            updateText();
+        });
+
+        // --- Functions ---
+        function updateText() {
+            // Set text direction for the page
+            document.documentElement.setAttribute('dir', currentLang === 'fa' ? 'rtl' : 'ltr');
+
+            // Update all elements that have a data-key attribute
+            document.querySelectorAll('[data-key]').forEach(element => {
+                const key = element.getAttribute('data-key');
+                if (translations[currentLang][key]) {
+                    element.textContent = translations[currentLang][key];
+                }
+            });
+        }
+
+        // --- Initial Load ---
+        // Set the initial text on the page when it first loads
+        updateText();
+
+    </script>
+</body>
+</html>
